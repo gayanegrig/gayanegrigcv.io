@@ -36,7 +36,7 @@ function ProjectSingle(props) {
         {props.project.ProjectImages?.map((project) => (
           <div className="mb-10 sm:mb-0" key={project.id}>
             <Image
-              src={project.img}
+              src={project.img.src}
               className="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
               alt={project?.title}
               layout="responsive"
