@@ -1,12 +1,25 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { v4 as uuidv4 } from "uuid";
+import {
+  webMockup,
+  webMockup1,
+  mobileAppMockup,
+  uiProject1,
+  mobileProject1,
+  webProject1,
+  mobileProject3,
+  uiProject2,
+  webProject2,
+  mobileProject2,
+} from "../../public/images/assets.images";
+
 export const projectsData = [
   {
     id: 1,
     title: "Greenwaveiot",
     url: "greenwaveiot",
     category: "Web Application",
-    img: "../../public/images/web-Mockup.png",
+    img: webMockup,
     ProjectHeader: {
       title: "Greenwaveiot",
       tags: "Frontend Development",
@@ -15,12 +28,12 @@ export const projectsData = [
       {
         id: uuidv4(),
         title: "Greenwaveiot",
-        img: "../../public/images/web-Mockup.png",
+        img: webMockup,
       },
       {
         id: uuidv4(),
         title: "Greenwaveiot",
-        img: "../../public/images/web-Mockup-1.png",
+        img: webMockup1,
       },
     ],
     ProjectInfo: {
@@ -66,7 +79,7 @@ export const projectsData = [
     title: "Game QUIZ",
     url: "game-quiz",
     category: "Mobile Application",
-    img: "../../public/images/Mobile-App-Mockup.png",
+    img: mobileAppMockup,
     ProjectHeader: {
       title: "Game QUIZ",
       tags: ["Frontend Development", "Game Development"],
@@ -75,7 +88,7 @@ export const projectsData = [
       {
         id: uuidv4(),
         title: "Game QUIZ Interface",
-        img: "../../public/images/Mobile-App-Mockup.png",
+        img: mobileAppMockup,
       },
     ],
     ProjectInfo: {
@@ -130,7 +143,7 @@ export const projectsData = [
     title: "Winter Park",
     url: "winter-park",
     category: "Mobile Application",
-    img: "../../public/images/ui-project-1.png",
+    img: uiProject1,
     ProjectHeader: {
       title: "Winter Park",
       tags: ["Frontend Development", "Mobile App"],
@@ -139,7 +152,7 @@ export const projectsData = [
       {
         id: uuidv4(),
         title: "Winter Park",
-        img: "../../public/images/ui-project-1.png",
+        img: uiProject1,
       },
     ],
     ProjectInfo: {
@@ -215,7 +228,7 @@ export const projectsData = [
     title: "Meteo Technical Application",
     url: "meteo-tech-app",
     category: "Mobile Application",
-    img: "../../public/images/mobile-project-1.png",
+    img: mobileProject1,
     ProjectHeader: {
       title: "Meteo Technical Application",
       tags: ["Frontend Development", "Mobile App", "Real-Time Data"],
@@ -224,7 +237,7 @@ export const projectsData = [
       {
         id: uuidv4(),
         title: "Meteo Technical Application",
-        img: "../../public/images/mobile-project-1.png",
+        img: mobileProject1,
       },
     ],
     ProjectInfo: {
@@ -294,7 +307,7 @@ export const projectsData = [
     title: "Barrier App",
     url: "barrier-app",
     category: "Mobile Application",
-    img: "../../public/images/web-project-1.png",
+    img: webProject1,
     ProjectHeader: {
       title: "Barrier App",
       tags: ["Frontend Development", "Mobile Safety"],
@@ -303,7 +316,7 @@ export const projectsData = [
       {
         id: uuidv4(),
         title: "Barrier App Interface",
-        img: "../../public/images/web-project-1.png",
+        img: webProject1,
       },
     ],
     ProjectInfo: {
@@ -369,7 +382,7 @@ export const projectsData = [
     title: "iMeter.am",
     url: "iMeter.am",
     category: "Web Application",
-    img: "../../public/images/mobile-project-3.png",
+    img: mobileProject3,
     ProjectHeader: {
       title: "iMeter.am",
       tags: ["Full Stack Development", "Home Automation"],
@@ -378,7 +391,7 @@ export const projectsData = [
       {
         id: uuidv4(),
         title: "iMeter.am Interface",
-        img: "../../public/images/mobile-project-3.png",
+        img: mobileProject3,
       },
     ],
     ProjectInfo: {
@@ -443,7 +456,7 @@ export const projectsData = [
     title: "Redro",
     url: "redro-app",
     category: "Mobile Application",
-    img: "../../public/images/ui-project-2.png",
+    img: uiProject2,
     ProjectHeader: {
       title: "Redro",
       tags: ["Frontend Development"],
@@ -515,7 +528,7 @@ export const projectsData = [
     title: "Geoquake App",
     url: "geoquake-app",
     category: "Mobile Application",
-    img: "../../public/images/web-project-2.png",
+    img: webProject2,
     ProjectHeader: {
       title: "Geoquake App",
       tags: ["Frontend Development", "Seismic Monitoring"],
@@ -524,7 +537,7 @@ export const projectsData = [
       {
         id: uuidv4(),
         title: "Geoquake App Interface",
-        img: "../../public/images/web-project-2.png",
+        img: webProject2,
       },
     ],
     ProjectInfo: {
@@ -602,7 +615,7 @@ export const projectsData = [
     title: "Car Number Scanner",
     url: "car-number-scanner",
     category: "Mobile Application",
-    img: "../../public/images/mobile-project-2.png",
+    img: mobileProject2,
     ProjectHeader: {
       title: "Car Number Scanner",
       tags: ["Mobile Application", "Image Recognition"],
@@ -611,7 +624,7 @@ export const projectsData = [
       {
         id: uuidv4(),
         title: "Car Number Scanner Interface",
-        img: "../../public/images/mobile-project-2.png",
+        img: mobileProject2,
       },
     ],
     ProjectInfo: {

@@ -1,0 +1,11 @@
+export { default as webMockup } from "../../public/images/web-Mockup.png";
+export { default as webMockup1 } from "../../public/images/web-Mockup-1.png";
+export { default as mobileAppMockup } from "../../public/images/Mobile-App-Mockup.png";
+export { default as uiProject1 } from "../../public/images/ui-project-1.png";
+export { default as mobileProject1 } from "../../public/images/mobile-project-1.png";
+export { default as webProject1 } from "../../public/images/web-project-1.png";
+export { default as webProject2 } from "../../public/images/web-project-2.png";
+export { default as mobileProject3 } from "../../public/images/mobile-project-3.png";
+export { default as mobileProject2 } from "../../public/images/mobile-project-2.png";
+export { default as uiProject2 } from "../../public/images/ui-project-2.png";
+export { default as Developer } from "../../public/images/developer.png";
