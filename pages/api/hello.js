@@ -139,7 +139,7 @@ export const projectsData = [
     ProjectImages: [
       {
         id: uuidv4(),
-        title: "Winter Park UI",
+        title: "Winter Park",
         img: "/images/ui-project-1.png",
       },
     ],
@@ -166,18 +166,20 @@ export const projectsData = [
       ObjectivesDetails:
         "To develop a mobile application that enhances the user experience for planning winter sports activities.",
 
-      Technologies: {
-        title: "Tools & Technologies",
-        techs: [
-          "React Native",
-          "JavaScript",
-          "Firebase",
-          "Figma",
-          "Redux Toolkit",
-          "Push Notifications",
-          "Authentication (Firebase Auth)",
-        ],
-      },
+      Technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "React Native",
+            "JavaScript",
+            "Firebase",
+            "Figma",
+            "Redux Toolkit",
+            "Push Notifications",
+            "Authentication (Firebase Auth)",
+          ],
+        },
+      ],
 
       ProjectDetailsHeading: "Project Challenges",
       ProjectDetails: [
@@ -222,7 +224,7 @@ export const projectsData = [
     ProjectImages: [
       {
         id: uuidv4(),
-        title: "Meteo Technical Application UI",
+        title: "Meteo Technical Application",
         img: "/images/mobile-project-1.png",
       },
     ],

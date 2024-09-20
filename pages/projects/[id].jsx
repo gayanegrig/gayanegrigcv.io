@@ -5,7 +5,6 @@ import { projectsData } from '../../pages/api/hello';
 import RelatedProjects from '../../components/projects/RelatedProjects';
 
 function ProjectSingle(props) {
-  // Graceful fallback if project data is not found
   if (!props.project) {
     return (
       <div className="container mx-auto">
@@ -18,7 +17,7 @@ function ProjectSingle(props) {
 
   return (
     <div className="container mx-auto">
-      <PagesMetaHead title={props.project.title} />
+      <PagesMetaHead title={props.project?.title} />
       <div>
         <p className="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7">
           {props.project.ProjectHeader?.title}
@@ -33,14 +32,13 @@ function ProjectSingle(props) {
         </div>
       </div>
 
-      {/* Images Section */}
       <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
         {props.project.ProjectImages?.map((project) => (
           <div className="mb-10 sm:mb-0" key={project.id}>
             <Image
               src={project.img}
               className="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
-              alt={project.title}
+              alt={project?.title}
               layout="responsive"
               width={100}
               height={90}
@@ -49,11 +47,8 @@ function ProjectSingle(props) {
         ))}
       </div>
 
-      {/* Info Section */}
       <div className="block sm:flex gap-0 sm:gap-10 mt-14">
-        {/* Left Side Info */}
         <div className="w-full sm:w-1/3 text-left">
-          {/* Client Details */}
           <div className="mb-7">
             <p className="font-general-regular text-2xl font-semibold text-secondary-dark dark:text-secondary-light mb-2">
               {props.project.ProjectInfo?.ClientHeading}
@@ -64,15 +59,15 @@ function ProjectSingle(props) {
                   className="font-general-regular text-ternary-dark dark:text-ternary-light"
                   key={info.id}
                 >
-                  <span>{info.title}: </span>
+                  <span>{info?.title}: </span>
                   <a
                     href={info.details}
                     className={
-                      info.title === 'Website' || info.title === 'Phone'
+                      info?.title === 'Website' || info?.title === 'Phone'
                         ? 'hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300'
                         : ''
                     }
-                    aria-label={`Project ${info.title}`}
+                    aria-label={`Project ${info?.title}`}
                   >
                     {info.details}
                   </a>
@@ -81,7 +76,6 @@ function ProjectSingle(props) {
             </ul>
           </div>
 
-          {/* Objectives */}
           <div className="mb-7">
             <p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
               {props.project.ProjectInfo?.ObjectivesHeading}
@@ -91,39 +85,22 @@ function ProjectSingle(props) {
             </p>
           </div>
 
-          {/* Technologies */}
           <div className="mb-7">
             <p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-              {props.project.ProjectInfo?.Technologies[0].title}
+              {props.project.ProjectInfo?.Technologies[0]?.title}
             </p>
             <p className="font-general-regular text-primary-dark dark:text-ternary-light">
-              {props.project.ProjectInfo?.Technologies[0].techs.join(', ')}
+              {props.project.ProjectInfo?.Technologies[0]?.techs.join(', ')}
             </p>
           </div>
 
-          {/* Social Sharing */}
           <div>
             <p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
               {props.project.ProjectInfo?.SocialSharingHeading}
             </p>
-            {/* Uncomment when SocialSharing data is available */}
-            {/* <div className="flex items-center gap-3 mt-5">
-              {props.project.ProjectInfo?.SocialSharing.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="__blank"
-                  aria-label="Share Project"
-                  className="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
-                >
-                  <span className="text-lg lg:text-2xl">{social.icon}</span>
-                </a>
-              ))}
-            </div> */}
           </div>
         </div>
 
-        {/* Right Side Details */}
         <div className="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
           <p className="text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
             {props.project.ProjectInfo?.ProjectDetailsHeading}
@@ -144,14 +121,19 @@ function ProjectSingle(props) {
   );
 }
 
-export async function getServerSideProps({ query }) {
-  const { id } = query;
-  const project = projectsData.find((project) => project.id === Number(id));
+export async function getStaticPaths() {
+  const paths = projectsData.map((project) => ({
+    params: { id: project.id.toString() },
+  }));
 
-  // If project not found, return 404
-  if (!project) {
-    return { notFound: true };
-  }
+  return {
+    paths,
+    fallback: false, // If no match found, will show 404
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const project = projectsData.find((project) => project.id === Number(params.id));
 
   return {
     props: {
