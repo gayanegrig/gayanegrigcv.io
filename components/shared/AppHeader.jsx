@@ -8,7 +8,6 @@ import HireMeModal from '../HireMeModal';
 import logoLight from '../../public/images/logo-dark.png';
 import logoDark from '../../public/images/logo-dark.png';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
-//FiSun, FiMoon,
 function AppHeader() {
 	const [showMenu, setShowMenu] = useState(false);
 	const [showModal, setShowModal] = useState(false);

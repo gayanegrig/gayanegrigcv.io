@@ -681,7 +681,31 @@ export const projectsData = [
     },
   },
 ];
-
+export const RelatedProject = {
+  title: "Related Projects",
+  Projects: [
+    {
+      id: uuidv4(),
+      title: "Mobile UI",
+      img: uiProject2,
+    },
+    {
+      id: uuidv4(),
+      title: "Mobile Application",
+      img: mobileAppMockup,
+    },
+    {
+      id: uuidv4(),
+      title: "Web Application",
+      img: webMockup1,
+    },
+    {
+      id: uuidv4(),
+      title: "Mobile Application",
+      img: mobileProject2,
+    },
+  ],
+};
 export default function handler(req, res) {
   res.status(200).json(projectsData);
 }

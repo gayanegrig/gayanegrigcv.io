@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowDownCircle } from "react-icons/fi";
-// import useThemeSwitcher from "../../hooks/useThemeSwitcher";
 import Image from "next/image";
 import { Developer } from "../../public/images/assets.images";
 
 function AppBanner() {
-  // const [activeTheme] = useThemeSwitcher();
+  const [isPopupVisible, setPopupVisible] = useState(true); // State to control popup visibility
+
+  const closePopup = () => {
+    setPopupVisible(false); // Hide the popup when user clicks close
+  };
 
   return (
     <motion.section
@@ -86,7 +90,7 @@ function AppBanner() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
         className="w-full sm:w-1/4 text-right float-right mt-8 sm:mt-0">
-         <Image
+        <Image
           src={Developer.src}
           alt="Developer"
           width={500} 
@@ -94,6 +98,27 @@ function AppBanner() {
           layout="responsive"
         />
       </motion.div>
+
+      {/* Styled Popup on the center-right */}
+      {isPopupVisible && (
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ ease: "easeInOut", duration: 0.8, delay: 0.3 }}
+          className="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 p-4 w-64 rounded-lg shadow-xl bg-gradient-to-r from-purple-500 to-indigo-500 text-white"
+        >
+          <h2 className="text-lg font-bold mb-2">⚠️ Under Construction</h2>
+          <p className="text-sm mb-4">
+            The web page may have technical problems, the page is still under construction.
+          </p>
+          <button
+            onClick={closePopup}
+            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-3 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            Close
+          </button>
+        </motion.div>
+      )}
     </motion.section>
   );
 }

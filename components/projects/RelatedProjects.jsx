@@ -1,31 +1,6 @@
 import Image from 'next/image';
-import { v4 as uuidv4 } from 'uuid';
+import { RelatedProject } from '../../pages/api/hello';
 
-const RelatedProject = {
-	title: 'Related Projects',
-	Projects: [
-		{
-			id: uuidv4(),
-			title: 'Mobile UI',
-			img: '/images/ui-project-2.png',
-		},
-		{
-			id: uuidv4(),
-			title: 'Web Application',
-			img: '/images/mobile-project-1.png',
-		},
-		{
-			id: uuidv4(),
-			title: 'Web Application',
-			img: '/images/web-project-1.png',
-		},
-		{
-			id: uuidv4(),
-			title: 'Mobile Application',
-			img: '/images/mobile-project-2.png',
-		},
-	],
-};
 
 function RelatedProjects() {
 	return (
