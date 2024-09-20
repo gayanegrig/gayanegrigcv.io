@@ -1,14 +1,14 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import ProjectSingle from './ProjectSingle';
-// import { projectsData } from '../../data/projectsData.copy';
+import { projectsData } from '../../pages/api/hello';
 import ProjectsFilter from './ProjectsFilter';
 
 function ProjectsGrid() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [searchProject, setSearchProject] = useState();
 	const [selectProject, setSelectProject] = useState();
-	const [projects, setProjects] = useState([]);
+	// const [projects, setProjects] = useState([]);
 
 	// @todo - To be fixed
 	// const searchProjectsByTitle = projectsData.filter((item) => {
@@ -22,17 +22,17 @@ function ProjectsGrid() {
 	// 	return result;
 	// });
 
-	useEffect(() => {
-		const fetchProjects = async () => {
-		  const response = await fetch('/api/hello');
-		  const data = await response.json();
-		  setProjects(data);
-		};
+	// useEffect(() => {
+	// 	const fetchProjects = async () => {
+	// 	  const response = await fetch('/api/hello');
+	// 	  const data = await response.json();
+	// 	  setProjects(data);
+	// 	};
 	
-		fetchProjects();
-	  }, []);
+	// 	fetchProjects();
+	//   }, []);
 
-	const selectProjectsByCategory = projects?.filter((item) => {
+	const selectProjectsByCategory = projectsData?.filter((item) => {
 		let category =
 			item.category.charAt(0).toUpperCase() + item.category.slice(1);
 		return category.includes(selectProject);
@@ -125,7 +125,7 @@ function ProjectsGrid() {
 					? selectProjectsByCategory.map((project, index) => {
 							return <ProjectSingle key={index} {...project} />;
 					  })
-					: projects?.map((project, index) => (
+					: projectsData?.map((project, index) => (
 							<ProjectSingle key={index} {...project} />
 					  ))}
 			</div>
