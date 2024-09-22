@@ -3,31 +3,39 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import {  FiX, FiMenu } from 'react-icons/fi';
+import { FiX, FiMenu } from 'react-icons/fi';
 import HireMeModal from '../HireMeModal';
-import logoLight from '../../public/images/logo-dark.png';
 import logoDark from '../../public/images/logo-dark.png';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
-function AppHeader() {
+import SunAnimation from './SunAnimation';
+import CloudAnimation from './CloudAnimation';
+function AppHeader()
+{
 	const [showMenu, setShowMenu] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	const [activeTheme, setTheme] = useThemeSwitcher();
 
-	function toggleMenu() {
-		if (!showMenu) {
+	function toggleMenu()
+	{
+		if (!showMenu)
+		{
 			setShowMenu(true);
-		} else {
+		} else
+		{
 			setShowMenu(false);
 		}
 	}
 
-	function showHireMeModal() {
-		if (!showModal) {
+	function showHireMeModal()
+	{
+		if (!showModal)
+		{
 			document
 				.getElementsByTagName('html')[0]
 				.classList.add('overflow-y-hidden');
 			setShowModal(true);
-		} else {
+		} else
+		{
 			document
 				.getElementsByTagName('html')[0]
 				.classList.remove('overflow-y-hidden');
@@ -48,23 +56,14 @@ function AppHeader() {
 				<div className="flex justify-between items-center px-4 sm:px-0">
 					<div>
 						<Link href="/">
-							{activeTheme === 'dark' ? (
-								<Image
-									src={logoDark}
-									className="w-36 cursor-pointer"
-									alt="Dark Logo"
-									width={150}
-									height={120}
-								/>
-							) : (
-								<Image
-									src={logoLight}
-									className="w-36 cursor-pointer"
-									alt="Dark Logo"
-									width={150}
-									height={120}
-								/>
-							)}
+							<Image
+								src={logoDark}
+								className="w-36 cursor-pointer"
+								alt="Dark Logo"
+								width={150}
+								height={120}
+							/>
+
 						</Link>
 					</div>
 
@@ -79,6 +78,8 @@ function AppHeader() {
 						) : (
 							<FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
 						)} */}
+						<SunAnimation />
+
 					</div>
 
 					{/* Small screen hamburger menu */}
@@ -180,10 +181,11 @@ function AppHeader() {
 						className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
 					>
 						{/* {activeTheme === 'dark' ? (
-							<FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
-						) : (
-							<FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
-						)} */}
+<SunAnimation />						) : (
+<CloudAnimation />						)} */}
+						{/* <SunAnimation /> */}
+						{activeTheme === 'dark' ? <CloudAnimation /> : <SunAnimation />}
+
 					</div>
 				</div>
 			</div>

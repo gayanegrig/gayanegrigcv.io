@@ -4,11 +4,13 @@ import { FiArrowDownCircle } from "react-icons/fi";
 import Image from "next/image";
 import { Developer } from "../../public/images/assets.images";
 
-function AppBanner() {
-  const [isPopupVisible, setPopupVisible] = useState(true); // State to control popup visibility
+function AppBanner()
+{
+  const [isPopupVisible, setPopupVisible] = useState(true);
 
-  const closePopup = () => {
-    setPopupVisible(false); // Hide the popup when user clicks close
+  const closePopup = () =>
+  {
+    setPopupVisible(false);
   };
 
   return (
@@ -29,7 +31,18 @@ function AppBanner() {
           className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light">
           Hello, I am Gayane.
         </motion.h1>
-        <motion.h1
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            ease: "easeInOut",
+            duration: 0.9,
+            delay: 0.2,
+          }}
+          className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200">
+          A Frontend Developer
+        </motion.p>
+        <motion.p
           initial={{
             opacity: 0,
             rotate: -10,
@@ -53,18 +66,6 @@ function AppBanner() {
           }}
           className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light">
           Nice to meet you!
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            ease: "easeInOut",
-            duration: 0.9,
-            delay: 0.2,
-          }}
-          className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200">
-          A Frontend Developer
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
@@ -93,7 +94,7 @@ function AppBanner() {
         <Image
           src={Developer.src}
           alt="Developer"
-          width={500} 
+          width={500}
           height={500}
           layout="responsive"
         />
@@ -109,7 +110,7 @@ function AppBanner() {
         >
           <h2 className="text-lg font-bold mb-2">⚠️ Under Construction</h2>
           <p className="text-sm mb-4">
-            The web page may have technical problems, the page is still under construction.
+            We may be experiencing some technical issues as our website is under construction. Thank you for your understanding and patience during this time.
           </p>
           <button
             onClick={closePopup}

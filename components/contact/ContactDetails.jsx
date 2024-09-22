@@ -1,24 +1,18 @@
-import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { contacts } from "../../pages/api/hello";
 
-const contacts = [
+function ContactDetails()
+{
+	const getColorClass = (id) =>
 	{
-		id: 1,
-		name: 'Yerevan, Armenia',
-		icon: <FiMapPin />,
-	},
-	{
-		id: 2,
-		name: 'gayane.grigoryan.93.gg@gmail.com',
-		icon: <FiMail />,
-	},
-	{
-		id: 3,
-		name: '+374 93 119983',
-		icon: <FiPhone />,
-	},
-];
+		switch (id)
+		{
+			case 1:
+				return "text-red-600";
+			default:
+				return "text-indigo-500";
+		}
+	};
 
-function ContactDetails() {
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="text-left max-w-xl px-6">
@@ -26,9 +20,12 @@ function ContactDetails() {
 					Contact details
 				</h2>
 				<ul>
-					{contacts.map((contact) => (
-						<li className="flex " key={contact.id}>
-							<i className="text-2xl text-neutral-500 dark:text-neutral-400 mr-4 mt-1">
+					{contacts?.map((contact) => (
+						<li className="flex" key={contact.id}>
+							<i
+								className={`text-2xl mr-4 mt-1 ${getColorClass(contact.id)} ${contact.id === 1 ? 'animate-bounce' : ''
+									}`}
+							>
 								{contact.icon}
 							</i>
 							<span className="text-lg mb-4 text-ternary-dark dark:text-ternary-light">

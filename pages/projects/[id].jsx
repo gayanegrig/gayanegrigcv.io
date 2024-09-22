@@ -55,22 +55,11 @@ function ProjectSingle(props) {
             </p>
             <ul className="leading-loose">
               {props.project.ProjectInfo?.CompanyInfo.map((info) => (
-                <li
-                  className="font-general-regular text-ternary-dark dark:text-ternary-light"
-                  key={info.id}
-                >
-                  <span>{info?.title}: </span>
-                  <a
-                    href={info.details}
-                    className={
-                      info?.title === 'Website' || info?.title === 'Phone'
-                        ? 'hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300'
-                        : ''
-                    }
-                    aria-label={`Project ${info?.title}`}
-                  >
-                    {info.details}
-                  </a>
+                <li className="font-general-regular text-white" key={info.id}>
+                  <span className="text-white">{info?.title}: </span>
+                  <span className="bg-gradient-to-r from-violet-400	to-violet-500	bg-clip-text text-transparent">
+                  {info.details}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -89,15 +78,13 @@ function ProjectSingle(props) {
             <p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
               {props.project.ProjectInfo?.Technologies[0]?.title}
             </p>
-            <p className="font-general-regular text-primary-dark dark:text-ternary-light">
-              {props.project.ProjectInfo?.Technologies[0]?.techs.join(', ')}
-            </p>
-          </div>
-
-          <div>
-            <p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-              {props.project.ProjectInfo?.SocialSharingHeading}
-            </p>
+            <ul className="list-disc pl-5">
+              {props.project.ProjectInfo?.Technologies[0]?.techs.map((tech, index) => (
+                <li key={index} className="font-general-regular text-primary-dark dark:text-ternary-light">
+                  {tech}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -128,7 +115,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false, // If no match found, will show 404
+    fallback: false, 
   };
 }
 

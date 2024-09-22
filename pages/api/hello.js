@@ -12,6 +12,7 @@ import {
   webProject2,
   mobileProject2,
 } from "../../public/images/assets.images";
+import { FiPhone, FiMapPin, FiMail } from "react-icons/fi";
 
 export const projectsData = [
   {
@@ -22,7 +23,7 @@ export const projectsData = [
     img: webMockup,
     ProjectHeader: {
       title: "Greenwaveiot",
-      tags: "Frontend Development",
+      tags: ["Frontend Development"],
     },
     ProjectImages: [
       {
@@ -41,7 +42,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Greenwaveiot",
+          title: "Client",
           details: "TenMileZone Ltd",
         },
         {
@@ -56,7 +57,13 @@ export const projectsData = [
       Technologies: [
         {
           title: "Tools & Technologies",
-          techs: ["React js", "JavaScript", "Styled Components", "AdobeXD"],
+          techs: [
+            "React js",
+            "JavaScript",
+            "Styled Components",
+            "REST APIs",
+            "AdobeXD",
+          ],
         },
       ],
       ProjectDetailsHeading: "Challenge",
@@ -82,7 +89,7 @@ export const projectsData = [
     img: mobileAppMockup,
     ProjectHeader: {
       title: "Game QUIZ",
-      tags: ["Frontend Development", "Game Development"],
+      tags: ["Frontend Development"],
     },
     ProjectImages: [
       {
@@ -107,7 +114,7 @@ export const projectsData = [
         {
           id: uuidv4(),
           title: "Website",
-          details: "https://candywings.com",
+          details: "https://www.candywings.com",
         },
       ],
       ObjectivesHeading: "Project Objective",
@@ -124,6 +131,12 @@ export const projectsData = [
             "Adobe XD",
             "Google Login",
             "Facebook Login",
+            "Redux Toolkit",
+            "REST APIs",
+            "Push Notifications",
+            "Firebase (Cloud Messaging)",
+            "React Navigation",
+            "AsyncStorage",
           ],
         },
       ],
@@ -146,7 +159,7 @@ export const projectsData = [
     img: uiProject1,
     ProjectHeader: {
       title: "Winter Park",
-      tags: ["Frontend Development", "Mobile App"],
+      tags: ["Frontend Development"],
     },
     ProjectImages: [
       {
@@ -183,12 +196,15 @@ export const projectsData = [
           title: "Tools & Technologies",
           techs: [
             "React Native",
+            "TypeScript",
             "JavaScript",
-            "Firebase",
-            "Figma",
+            "Figma (UI/UX Design Collaboration) (UI/UX Design Collaboration)",
             "Redux Toolkit",
+            "REST APIs",
             "Push Notifications",
-            "Authentication (Firebase Auth)",
+            "Firebase (Authentication, Firestore, Cloud Messaging)",
+            "React Navigation",
+            "AsyncStorage",
           ],
         },
       ],
@@ -231,7 +247,7 @@ export const projectsData = [
     img: mobileProject1,
     ProjectHeader: {
       title: "Meteo Technical Application",
-      tags: ["Frontend Development", "Mobile App", "Real-Time Data"],
+      tags: ["Frontend Development"],
     },
     ProjectImages: [
       {
@@ -270,10 +286,14 @@ export const projectsData = [
             "React Native",
             "TypeScript",
             "JavaScript",
-            "Figma",
+            "Figma (UI/UX Design Collaboration) (UI/UX Design Collaboration)",
             "Redux Toolkit",
+            "AsyncStorage",
             "REST APIs",
             "Push Notifications",
+            "Firebase (Authentication, Firestore, Cloud Messaging)",
+            "React Navigation",
+            "React Native Reanimated",
           ],
         },
       ],
@@ -310,7 +330,7 @@ export const projectsData = [
     img: webProject1,
     ProjectHeader: {
       title: "Barrier App",
-      tags: ["Frontend Development", "Mobile Safety"],
+      tags: ["Frontend Development"],
     },
     ProjectImages: [
       {
@@ -349,10 +369,15 @@ export const projectsData = [
             "React Native",
             "TypeScript",
             "JavaScript",
-            "Figma",
+            "Figma (UI/UX Design Collaboration) (UI/UX Design Collaboration)",
             "Redux Toolkit",
             "REST APIs",
+            "Axios (Data Fetching)",
             "Push Notifications",
+            "Firebase (Authentication, Firestore, Cloud Messaging)",
+            "React Navigation (Stack)",
+            "AsyncStorage",
+            "React-Native Maps",
           ],
         },
       ],
@@ -385,7 +410,7 @@ export const projectsData = [
     img: mobileProject3,
     ProjectHeader: {
       title: "iMeter.am",
-      tags: ["Full Stack Development", "Home Automation"],
+      tags: ["Full Stack Development"],
     },
     ProjectImages: [
       {
@@ -410,7 +435,7 @@ export const projectsData = [
         {
           id: uuidv4(),
           title: "Website",
-          details: "https://imeter.am",
+          details: "https://www.imeter.am",
         },
       ],
       ObjectivesHeading: "Project Objective",
@@ -424,7 +449,7 @@ export const projectsData = [
             "Next.js",
             "TypeScript",
             "JavaScript",
-            "Figma",
+            "Figma (UI/UX Design Collaboration) (UI/UX Design Collaboration)",
             "Node.js",
             "RESTful APIs",
           ],
@@ -465,7 +490,7 @@ export const projectsData = [
       {
         id: uuidv4(),
         title: "Redro Application Interface",
-        img: "../../public/images/ui-project-2.png",
+        img: uiProject2,
       },
     ],
     ProjectInfo: {
@@ -484,7 +509,7 @@ export const projectsData = [
         {
           id: uuidv4(),
           title: "Website",
-          details: "https://itflame.am/",
+          details: "https://www.itflame.am/",
         },
       ],
       ObjectivesHeading: "Project Objective",
@@ -500,6 +525,10 @@ export const projectsData = [
             "JavaScript",
             "TypeScript",
             "Redux Toolkit",
+            "React Navigation (Stack, Tab, Drawer)",
+            "AsyncStorage",
+            "REST APIs",
+            "Axios (Data Fetching)",
           ],
         },
       ],
@@ -531,7 +560,7 @@ export const projectsData = [
     img: webProject2,
     ProjectHeader: {
       title: "Geoquake App",
-      tags: ["Frontend Development", "Seismic Monitoring"],
+      tags: ["Frontend Development"],
     },
     ProjectImages: [
       {
@@ -570,9 +599,14 @@ export const projectsData = [
             "React Native",
             "JavaScript",
             "TypeScript",
-            "Figma",
+            "Figma (UI/UX Design Collaboration) (UI/UX Design Collaboration)",
             "Redux Toolkit",
+            "AsyncStorage",
+            "React Navigation (Stack)",
+            "Firebase (Cloud Messaging)",
+            "Push Notifications",
             "RESTful APIs",
+            "Axios (Data Fetching)",
             "Google Login",
             "Facebook Login",
             "Apple Pay",
@@ -618,7 +652,7 @@ export const projectsData = [
     img: mobileProject2,
     ProjectHeader: {
       title: "Car Number Scanner",
-      tags: ["Mobile Application", "Image Recognition"],
+      tags: ["Mobile Application"],
     },
     ProjectImages: [
       {
@@ -657,10 +691,14 @@ export const projectsData = [
             "React Native",
             "JavaScript",
             "TypeScript",
-            "Figma",
+            "Figma (UI/UX Design Collaboration) (UI/UX Design Collaboration)",
             "Image Recognition Libraries",
             "Redux Toolkit",
             "RESTful APIs",
+            "Axios (Data Fetching)",
+            "React Navigation (Stack)",
+            "Push Notifications",
+            "Firebase (Cloud Messaging)",
           ],
         },
       ],
@@ -706,6 +744,24 @@ export const RelatedProject = {
     },
   ],
 };
+export const contacts = [
+  {
+    id: 1,
+    name: "Yerevan, Armenia",
+    icon: <FiMapPin />,
+  },
+  {
+    id: 2,
+    name: "gayane.grigoryan.93.gg@gmail.com",
+    icon: <FiMail />,
+  },
+  {
+    id: 3,
+    name: "+374 93 119983",
+    icon: <FiPhone />,
+  },
+];
+
 export default function handler(req, res) {
   res.status(200).json(projectsData);
 }
