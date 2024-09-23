@@ -1,5 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { v4 as uuidv4 } from "uuid";
+import { FiPhone, FiMapPin, FiMail } from "react-icons/fi";
+
 import {
   webMockup,
   webMockup1,
@@ -12,7 +14,6 @@ import {
   webProject2,
   mobileProject2,
 } from "../../public/images/assets.images";
-import { FiPhone, FiMapPin, FiMail } from "react-icons/fi";
 
 export const projectsData = [
   {
@@ -761,7 +762,27 @@ export const contacts = [
     icon: <FiPhone />,
   },
 ];
-
+export const skills = [
+  'JavaScript',
+  'TypeScript',
+  'React Native',
+  'React JS',
+  'Next JS',
+  'Ionic',
+  'Angular',
+  'Cordova',
+  'Redux',
+  'MobX',
+  'HTML',
+  'CSS',
+  'Git',
+  'WebSockets',
+  'GraphQL',
+  'RESTful APIs',
+  'CI/CD',
+  'JIRA',
+  'Trello',
+];
 export default function handler(req, res) {
   res.status(200).json(projectsData);
 }

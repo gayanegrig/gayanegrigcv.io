@@ -26,15 +26,50 @@ module.exports = {
           "2xl": "8rem",
         },
       },
-      // animation: {
-      //   run: "run 0.675s steps(6) infinite",
-      // },
-      // keyframes: {
-      //   run: {
-      //     to: { backgroundPosition: "-1536px 0" },
-      //   },
-      // },
+      keyframes: {
+        ccrm: {
+          "0%": { opacity: "0", top: "-1000px" },
+          "100%": { opacity: "1", top: "0" },
+        },
+        ccra: {
+          "0%": { transform: "scale(1.1)" },
+          "25%": { transform: "scale(1)" },
+          "50%": { transform: "scale(0.9)" },
+          "75%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.1)" },
+        },
+        ccrb: {
+          "0%": { bottom: "5px" },
+          "25%": { bottom: "0px" },
+          "50%": { bottom: "3px" },
+          "75%": { bottom: "2px" },
+          "100%": { bottom: "0px" },
+        },
+        pulse: {
+          "0%": {
+            boxShadow: "0 0 0 0 rgba(139, 92, 246, 0.9)",
+            borderRadius: "50%",
+            transform: "scale(1.1)",
+          },
+          "100%": {
+            boxShadow: "0 0 0 45px rgba(139, 92, 246, 0)",
+            borderRadius: "50%",
+            transform: "scale(1.1)",
+          },
+        },
+      },
+      animation: {
+        "fade-in": "ccrm 0.9s ease-in-out",
+        "pulse-odd": "ccra 4s linear infinite",
+        "pulse-even": "ccrb 3s ease-in-out infinite",
+        pulse: "pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1)",
+      },
+      spacing: {
+        bubble: "150px",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],
 };
+
+// tailwind.config.js

@@ -17,36 +17,42 @@ function ContactForm()
 		setFormData((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const handleSubmit = async (e) =>
+	async function handleSubmit(event)
 	{
-		e.preventDefault();
-		const url = "/api/contact";
+		event.preventDefault();
 
-		const res = await fetch(url, {
-			method: 'POST',
+		const data = {
+			name: event.target.name.value,
+			email: event.target.email.value,
+			message: event.target.message.value,
+		};
+
+		const url = "/api/contact/route";
+		const response = await fetch(url, {
+			method: "POST",
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
 				Accept: "application/json",
 			},
-			body: JSON.stringify(formData),
+			body: JSON.stringify(data),
 		});
-		console.log('res', res);
-		if (res.ok)
+		if (response.ok)
 		{
-			alert('Message sent successfully!');
-			setFormData({ name: '', email: '', subject: '', message: '' });
+			alert("Message sent successfully");
+			//reset the form
+			event.target.name.value = "";
+			event.target.email.value = "";
+			event.target.message.value = "";
 		} else
 		{
-			alert('Failed to send message.');
+			alert("Error sending message");
 		}
-	};
-
+	}
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
-					onSubmit={handleSubmit}
-					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
+					onSubmit={handleSubmit} className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 				>
 					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
 						Contact Form
@@ -106,11 +112,13 @@ function ContactForm()
 					</div>
 
 					<div className="mt-6">
-						<Button
-							title="Send Message"
-							type="submit"
-							aria-label="Send Message"
-						/>
+						<span className="font-general-medium  px-7 py-4 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
+							<Button
+								title="Send Message"
+								type="submit"
+								aria-label="Send Message"
+							/>
+						</span>
 					</div>
 				</form>
 			</div>
