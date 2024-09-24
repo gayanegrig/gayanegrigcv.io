@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import Button from '../reusable/Button';
 import FormInput from '../reusable/FormInput';
@@ -27,7 +29,7 @@ function ContactForm()
 			message: event.target.message.value,
 		};
 
-		const url = "/api/contact/route";
+		const url = "/api/contact_api/route";
 		const response = await fetch(url, {
 			method: "POST",
 			headers: {
@@ -36,6 +38,7 @@ function ContactForm()
 			},
 			body: JSON.stringify(data),
 		});
+		console.log('response', response);
 		if (response.ok)
 		{
 			alert("Message sent successfully");
