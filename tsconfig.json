@@ -20,7 +20,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/api/contact/route.js"
+    "pages/api/contact_api/route.js"
   ],
   "exclude": ["node_modules"]
 }
