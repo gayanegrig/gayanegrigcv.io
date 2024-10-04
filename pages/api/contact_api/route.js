@@ -35,7 +35,7 @@ export default async function POST(req, res) {
       from: username,
       to: myEmail,
       replyTo: email,
-      subject: `Github Website activity from ${email},subject:${subject}`,
+      subject: `Github Website activity from ${email}, subject:${subject}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
