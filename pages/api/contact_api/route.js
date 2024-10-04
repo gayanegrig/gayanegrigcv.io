@@ -19,7 +19,8 @@ export default async function handler(req, res) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: "vda4400.is.cc",
+      // host: "vda4400.is.cc",
+      host: "smtp.mail.ru",
       port: 587,
       tls: {
         rejectUnauthorized: true,
