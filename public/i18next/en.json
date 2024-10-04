@@ -1,0 +1,43 @@
+{
+  "AppBanner": {
+    "hello_i_am": "Hello, I am Gayane.",
+    "frontend_developer": "A Frontend Developer",
+    "nice_to_meet_you": "Nice to meet you!",
+    "download_cv": "Download CV",
+    "popup_title": "⚠️ Under Construction",
+    "popup_message": "We may be experiencing some technical issues as our website is under construction. Thank you for your understanding and patience during this time.",
+    "popup_close": "Close"
+  },
+  "AppFooter": {
+    "follow_me": "Follow me"
+  },
+  "AppFooterCopyright": {
+    "message": "Next.js & Tailwind CSS Portfolio"
+  },
+  "ProjectsGrid": {
+    "title": "Projects portfolio",
+    "searchPlaceholder": "Search Projects",
+    "searchInstructions": "Search projects by title or filter by category",
+    "noProjectsFound": "No projects found matching the criteria"
+  },
+  "home": {
+    "buttonMoreProjects": "More Projects"
+  },
+  "header": {
+    "projects": "Projects",
+    "about_me": "About Me",
+    "contact": "Contact",
+    "hire_me": "Hire Me"
+  },
+  "contactDetails": {
+    "title": "Contact details",
+    "contactForm": "Contact Form",
+    "formLabels": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "sendMessage": "Send Message"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "AppBanner": {
+    "hello_i_am": "Ողջույն, ես Գայանե եմ։",
+    "frontend_developer": "Ես Frontend ծրագրավորող եմ",
+    "nice_to_meet_you": "Ուրախ եմ ծանոթանալու համար։",
+    "download_cv": "Ներբեռնել CV",
+    "popup_title": "⚠️ Կառուցման ընթացքում է",
+    "popup_message": "Այս պահին մեր կայքը գտնվում է կառուցման փուլում։ Հնարավոր են որոշ տեխնիկական խնդիրներ: Շնորհակալ ենք ըմբռնման համար։",
+    "popup_close": "Փակել"
+  },
+  "AppFooter": {
+    "follow_me": "Հետևեք ինձ"
+  },
+  "AppFooterCopyright": {
+    "message": "Next.js & Tailwind CSS Պորտֆոլիո"
+  },
+  "ProjectsGrid": {
+    "title": "Պորտֆոլիոյի նախագծեր",
+    "searchPlaceholder": "Փնտրել",
+    "searchInstructions": "Փնտրեք նախագծեր վերնագրով կամ ընտրեք կատեգորիա",
+    "noProjectsFound": "Չի գտնվել համընկնող նախագծեր"
+  },
+  "home": {
+    "buttonMoreProjects": "Դիտեք ավելին"
+  },
+  "header": {
+    "projects": "Նախագծեր",
+    "about_me": "Իմ Մասին",
+    "contact": "Հետադարձ Կապ",
+    "hire_me": "Համագործակցություն"
+  },
+  "contactDetails": {
+    "title": "Կապի մանրամասներ",
+    "contactForm": "Կապ",
+    "formLabels": {
+      "fullName": "Անուն Ազգանուն",
+      "email": "Էլ. փոստ",
+      "subject": "Թեմա",
+      "message": "Նամակ",
+      "sendMessage": "Ուղարկել նամակ"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "AppBanner": {
+    "hello_i_am": "Привет, я Гаяне.",
+    "frontend_developer": "Фронтенд разработчик",
+    "nice_to_meet_you": "Приятно познакомиться!",
+    "download_cv": "Скачать резюме",
+    "popup_title": "⚠️ В стадии разработки",
+    "popup_message": "Мы можем столкнуться с техническими проблемами, так как наш сайт находится в стадии разработки. Благодарим за ваше терпение.",
+    "popup_close": "Закрыть"
+  },
+  "AppFooter": {
+    "follow_me": "Следите за мной"
+  },
+  "AppFooterCopyright": {
+    "message": "Next.js & Tailwind CSS Портфель"
+  },
+  "ProjectsGrid": {
+    "title": "Портфолио проектов",
+    "searchPlaceholder": "Искать проекты",
+    "searchInstructions": "Ищите проекты по названию или фильтруйте по категориям",
+    "noProjectsFound": "Проекты, соответствующие критериям, не найдены"
+  },
+  "home": {
+    "buttonMoreProjects": "Посмотреть больше"
+  },
+  "header": {
+    "projects": "Проекты",
+    "about_me": "Обо мне",
+    "contact": "Контакты",
+    "hire_me": "Сотрудничество"
+  },
+  "contactDetails": {
+    "title": "Контактные данные",
+    "contactForm": "Контактная форма",
+    "formLabels": {
+      "fullName": "Имя Фамилия",
+      "email": "Электронная почта",
+      "subject": "Тема",
+      "message": "Сообщение",
+      "sendMessage": "Отправить сообщение"
+    }
+  }
+}
