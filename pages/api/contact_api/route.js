@@ -1,9 +1,9 @@
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  const username = process.env.username;
-  const password = process.env.password;
-  const myEmail = process.env.myEmail;
+  const username = "nin.dash@mail.ru";
+  const password = "41UGEeBgzwrtYWPKuwzA";
+  const myEmail = "gayane.grigoryan.93.gg@gmail.com";
 
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Only POST requests allowed" });
