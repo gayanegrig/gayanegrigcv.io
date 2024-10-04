@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, message } = req.body;
+    const { name, email, message, subject } = req.body;
 
     if (!name || !email || !message) {
       return res
@@ -19,7 +19,6 @@ export default async function handler(req, res) {
     }
 
     const transporter = nodemailer.createTransport({
-      // host: "vda4400.is.cc",
       host: "smtp.mail.ru",
       port: 587,
       tls: {
@@ -36,7 +35,7 @@ export default async function handler(req, res) {
       from: username,
       to: myEmail,
       replyTo: email,
-      subject: `Github Website activity from ${email}`,
+      subject: `Github Website activity from ${email},subject:${subject}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>

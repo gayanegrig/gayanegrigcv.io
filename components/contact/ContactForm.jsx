@@ -27,6 +27,7 @@ function ContactForm()
 			name: event.target.name.value,
 			email: event.target.email.value,
 			message: event.target.message.value,
+			subject: event.target.subject.value,
 		};
 
 		const url = "/api/contact_api/route";
@@ -46,6 +47,8 @@ function ContactForm()
 			event.target.name.value = "";
 			event.target.email.value = "";
 			event.target.message.value = "";
+			event.target.subject.value = "";
+
 		} else
 		{
 			alert("Error sending message");
