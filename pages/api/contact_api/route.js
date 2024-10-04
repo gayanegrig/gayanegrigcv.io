@@ -21,9 +21,9 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       host: "smtp.mail.ru",
       port: 587,
+      secure: false,
       tls: {
         rejectUnauthorized: true,
-        minVersion: "TLSv1.2",
       },
       auth: {
         user: username,
