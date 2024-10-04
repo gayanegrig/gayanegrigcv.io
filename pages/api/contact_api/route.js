@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-export default async function handler(req, res) {
+export default async function POST(req, res) {
   const username = "nin.dash@mail.ru";
   const password = "41UGEeBgzwrtYWPKuwzA";
   const myEmail = "gayane.grigoryan.93.gg@gmail.com";
@@ -20,10 +20,10 @@ export default async function handler(req, res) {
 
     const transporter = nodemailer.createTransport({
       host: "smtp.mail.ru",
-      port: 587,
-      secure: false,
+      port: 465,
+      secure: true,
       tls: {
-        rejectUnauthorized: true,
+        rejectUnauthorized: false,
       },
       auth: {
         user: username,
