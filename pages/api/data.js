@@ -53,7 +53,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Client",
+          title: "Company",
           details: "ArmMage LLC",
         },
         {
@@ -147,7 +147,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Client",
+          title: "Company",
           details: "Locator CJSC",
         },
         {
@@ -250,7 +250,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Client",
+          title: "Company",
           details: "Locator CJSC",
         },
         {
@@ -329,7 +329,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Client",
+          title: "Company",
           details: "TenMileZone Ltd",
         },
         {
@@ -390,7 +390,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Client",
+          title: "Company",
           details: "Candy Wings Ltd",
         },
         {
@@ -548,7 +548,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Client",
+          title: "Company",
           details: "Locator CSJC",
         },
         {
@@ -631,7 +631,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Client",
+          title: "Company",
           details: "Locator CJSC",
         },
         {
@@ -711,7 +711,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Client",
+          title: "Company",
           details: "iMeter CJSC",
         },
         {
@@ -791,7 +791,7 @@ export const projectsData = [
       CompanyInfo: [
         {
           id: uuidv4(),
-          title: "Client",
+          title: "Company",
           details: "It Flame LLC",
         },
         {
