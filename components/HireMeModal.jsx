@@ -21,7 +21,7 @@ function HireMeModal({ onClose, onRequest })
 			subject: event.target.subject.value,
 		};
 
-		const url = "/api/contact_api/";
+		const url = "/api/contact_api/route";
 		const response = await fetch(url, {
 			method: "POST",
 			headers: {
@@ -41,7 +41,6 @@ function HireMeModal({ onClose, onRequest })
 			alert("Error sending message");
 		}
 	};
-
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}

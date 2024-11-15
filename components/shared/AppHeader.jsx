@@ -5,11 +5,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiX, FiMenu } from "react-icons/fi";
 import HireMeModal from "../HireMeModal";
-import logoDark from "../../public/images/logo-dark.png";
 import useThemeSwitcher from "../../hooks/useThemeSwitcher";
 import SunAnimation from "./SunAnimation";
 import CloudAnimation from "./CloudAnimation";
 import { useTranslation } from "react-i18next";
+import { logoDark } from "../../public/images/assets.images";
 
 function AppHeader()
 {
@@ -59,7 +59,7 @@ function AppHeader()
 					<div>
 						<Link href="/">
 							<Image
-								src={logoDark}
+								src={logoDark.src}
 								className="w-36 cursor-pointer"
 								alt="Dark Logo"
 								width={150}

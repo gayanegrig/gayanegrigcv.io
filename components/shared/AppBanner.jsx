@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowDownCircle } from "react-icons/fi";
 import Image from "next/image";
@@ -9,12 +8,6 @@ function AppBanner()
 {
   const { t } = useTranslation();
 
-  const [isPopupVisible, setPopupVisible] = useState(true);
-
-  const closePopup = () =>
-  {
-    setPopupVisible(false);
-  };
 
   return (
     <motion.section
@@ -64,7 +57,7 @@ function AppBanner()
             delay: 0.2,
           }}
           whileHover={{
-            color: "rgb(34 197 94 / var(--tw-bg-opacity))",
+            color: "rgb(139 170 228 / var(--tw-bg-opacity))",
             scale: 1.1,
           }}
           className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light">
@@ -103,26 +96,7 @@ function AppBanner()
         />
       </motion.div>
 
-      {/* Styled Popup on the center-right */}
-      {isPopupVisible && (
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ ease: "easeInOut", duration: 0.8, delay: 0.3 }}
-          className="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 p-4 w-64 rounded-lg shadow-xl bg-gradient-to-r from-purple-500 to-indigo-500 text-white"
-        >
-          <h2 className="text-lg font-bold mb-2">{t("AppBanner.popup_title")}</h2>
-          <p className="text-sm mb-4">
-            {t("AppBanner.popup_message")}
-          </p>
-          <button
-            onClick={closePopup}
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-3 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
-          >
-            {t("AppBanner.popup_close")}
-          </button>
-        </motion.div>
-      )}
+
     </motion.section>
   );
 }

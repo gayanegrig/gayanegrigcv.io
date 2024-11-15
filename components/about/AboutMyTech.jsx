@@ -1,12 +1,25 @@
+import { useState } from "react";
+import { useEffect } from "react";
 
-import { skills } from "../../pages/api/hello";
 
 export default function TechnologiesTools()
 {
+    const [mySkills, setmySkills] = useState()
+    const fetchMySkills = async () =>
+    {
+        const response = await fetch('/api/skills-data');
+        const data = await response.json();
+        setmySkills(data);
+    };
+
+    useEffect(() =>
+    {
+        fetchMySkills();
+    }, []);
     return (
         <div className="ccr_buble p-12 mx-auto">
             <ul className="flex flex-wrap justify-center relative list-none p-0 m-0 h-full w-full animate-fade-in">
-                {skills.map((skill, index) =>
+                {mySkills?.map((skill, index) =>
                 {
                     const size = Math.floor(Math.random() * (90 - 70 + 1)) + 70;
                     const top = Math.random() * 80;

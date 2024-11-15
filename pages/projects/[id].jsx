@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import { FiTag } from 'react-icons/fi';
 import PagesMetaHead from '../../components/PagesMetaHead';
-import { projectsData } from '../../pages/api/hello';
+import { projectsData } from '../../pages/api/data';
 import RelatedProjects from '../../components/projects/RelatedProjects';
 
-function ProjectSingle(props) {
-  if (!props.project) {
+function ProjectSingle(props)
+{
+  if (!props.project)
+  {
     return (
       <div className="container mx-auto">
         <p className="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7">
@@ -57,9 +59,16 @@ function ProjectSingle(props) {
               {props.project.ProjectInfo?.CompanyInfo.map((info) => (
                 <li className="font-general-regular text-white" key={info.id}>
                   <span className="text-white">{info?.title}: </span>
-                  <span className="bg-gradient-to-r from-violet-400	to-violet-500	bg-clip-text text-transparent">
-                  {info.details}
-                  </span>
+                  {info.title === 'Website' || info.title === 'Project Links' ? <a
+                    href={info.details}
+                    target="_blank"
+                    className="bg-gradient-to-r bg-clip-text text-transparent  bg-gradient-to-r from-blue-500 to-violet-500"
+                    aria-label={info.title}
+                  >
+                    {(info.title === 'Website' && 'Visit Company Web Page' || info.title === 'Project Links' && 'View Live Project')}
+                  </a> : <span className="bg-gradient-to-r bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-violet-500">
+                    {info.details}
+                  </span>}
                 </li>
               ))}
             </ul>
@@ -108,18 +117,20 @@ function ProjectSingle(props) {
   );
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths()
+{
   const paths = projectsData.map((project) => ({
     params: { id: project.id.toString() },
   }));
 
   return {
     paths,
-    fallback: false, 
+    fallback: false,
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params })
+{
   const project = projectsData.find((project) => project.id === Number(params.id));
 
   return {

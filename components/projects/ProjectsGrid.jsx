@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import ProjectSingle from './ProjectSingle';
-import { projectsData } from '../../pages/api/hello';
 import ProjectsFilter from './ProjectsFilter';
 import { useTranslation } from 'react-i18next';
 
@@ -11,21 +10,23 @@ function ProjectsGrid()
 
 	const [searchProject, setSearchProject] = useState('');
 	const [selectProject, setSelectProject] = useState('');
-	// const [projects, setProjects] = useState([]);
+	const [projects, setProjects] = useState([]);
 
 
 
-	// useEffect(() => {
-	// 	const fetchProjects = async () => {
-	// 	  const response = await fetch('/api/hello');
-	// 	  const data = await response.json();
-	// 	  setProjects(data);
-	// 	};
+	useEffect(() =>
+	{
+		const fetchProjects = async () =>
+		{
+			const response = await fetch('/api/data');
+			const data = await response.json();
+			setProjects(data);
+		};
 
-	// 	fetchProjects();
-	//   }, []);
+		fetchProjects();
+	}, []);
 
-	const filteredProjects = projectsData.filter((item) =>
+	const filteredProjects = projects.filter((item) =>
 	{
 		const titleMatch = item.title.toLowerCase().includes(searchProject.toLowerCase());
 		const categoryMatch = selectProject ?
@@ -35,6 +36,7 @@ function ProjectsGrid()
 
 	return (
 		<section className="py-5 sm:py-10 mt-5 sm:mt-10">
+
 			<div className="text-center">
 				<p className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
 					{t('ProjectsGrid.title')}
