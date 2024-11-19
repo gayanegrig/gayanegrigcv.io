@@ -3,10 +3,7 @@
     "hello_i_am": "Hello, I am Gayane.",
     "frontend_developer": "A Frontend Developer",
     "nice_to_meet_you": "Nice to meet you!",
-    "download_cv": "Download CV",
-    "popup_title": "⚠️ Under Construction",
-    "popup_message": "We may be experiencing some technical issues as our website is under construction. Thank you for your understanding and patience during this time.",
-    "popup_close": "Close"
+    "download_cv": "Download CV"
   },
   "AppFooter": {
     "follow_me": "Follow me"
@@ -28,6 +25,9 @@
     "about_me": "About Me",
     "contact": "Contact",
     "hire_me": "Hire Me"
+  },
+  "aboutMe": {
+    "bio": "With 4 years of experience as a Front-End Developer specializing in React and React Native, I am passionate about leveraging my skills to drive innovation and create engaging user experiences. I am dedicated to continuous learning and professional growth, and thrive in collaborative environments where I can contribute to a dynamic team. My strong work ethic, adaptability, and focus on delivering impactful solutions make me eager to contribute to and grow within a forward-thinking organization."
   },
   "contactDetails": {
     "title": "Contact details",

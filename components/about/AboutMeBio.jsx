@@ -2,9 +2,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { aboutMeData } from '../../data/aboutMeData';
 import { Developer } from '../../public/images/assets.images';
+import { useTranslation } from 'react-i18next';
 
 function AboutMeBio()
 {
+	const { t } = useTranslation();
 	const [aboutMe] = useState(aboutMeData);
 
 	return (
@@ -25,7 +27,7 @@ function AboutMeBio()
 						className="mb-4 text-ternary-dark dark:text-ternary-light text-lg"
 						key={bio.id}
 					>
-						{bio.bio}
+						{t(bio.bio)}
 					</p>
 				))}
 

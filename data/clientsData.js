@@ -1,6 +1,4 @@
 import { v4 as uuidv4 } from "uuid";
-
-// Import images
 import EldoradoImage from "../public/images/brands/eldorado.png";
 import GeoquakeImage from "../public/images/brands/geoquake.png";
 import BeloteClubImage from "../public/images/brands/beloteClub.png";
@@ -13,12 +11,12 @@ export const clientsHeading = "Some of the brands I worked with";
 
 export const clientsData = [
   {
-    id: uuidv4(),
+    id: 0,
     title: "Eldorado",
     img: EldoradoImage,
   },
   {
-    id: uuidv4(),
+    id: 8,
     title: "Geoquake",
     img: GeoquakeImage,
   },
@@ -28,22 +26,22 @@ export const clientsData = [
     img: BeloteClubImage,
   },
   {
-    id: uuidv4(),
+    id: 3,
     title: "Winter Park",
     img: WinterParkImage,
   },
   {
-    id: uuidv4(),
+    id: 7,
     title: "Redro",
     img: RedroImage,
   },
   {
-    id: uuidv4(),
+    id: 2,
     title: "Candy Wings",
     img: CandyWingsImage,
   },
   {
-    id: uuidv4(),
+    id: 6,
     title: "Imeter",
     img: ImeterImage,
   },

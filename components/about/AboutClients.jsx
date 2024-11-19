@@ -3,7 +3,8 @@ import { clientsData } from '../../data/clientsData';
 import { clientsHeading } from '../../data/clientsData';
 import AboutClientSingle from './AboutClientSingle';
 
-function AboutClients() {
+function AboutClients()
+{
 	const [clients] = useState(clientsData);
 	return (
 		<div className="mt-10 sm:mt-20">
@@ -16,6 +17,7 @@ function AboutClients() {
 						title={client.title}
 						image={client.img}
 						key={client.id}
+						id={client.id}
 					/>
 				))}
 			</div>
