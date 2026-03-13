@@ -1,6 +1,6 @@
 import About from "../components/about/about";
 import Contact from "../components/contact/contact";
-import Projects from "../components/projects/Project";
+import Projects from "../components/projects/project";
 import AppBanner from "../components/shared/AppBanner";
 
 
