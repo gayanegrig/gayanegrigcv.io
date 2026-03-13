@@ -7,6 +7,8 @@ function AboutMeBio()
 {
 	const { t } = useTranslation();
 	const [aboutMe] = useState(aboutMeData);
+	const startYear = 2021;
+	const yearsOfExperience = new Date().getFullYear() - startYear;
 
 	return (
 		<section className="relative mt-12 sm:mt-20 overflow-hidden">
@@ -41,7 +43,7 @@ function AboutMeBio()
 									key={bio.id}
 									className="text-base sm:text-lg leading-8 text-ternary-dark dark:text-slate-300"
 								>
-									{t(bio.bio)}
+									{t(bio.bio, { years: yearsOfExperience })}
 								</p>
 							))}
 						</div>
