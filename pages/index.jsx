@@ -1,7 +1,7 @@
 
-import About from "../components/about/about";
-import Contact from "../components/contact/contact";
-import Projects from "../components/projects/project";
+import About from "../components/about";
+import Contact from "../components/contact";
+import Projects from "../components/projects";
 import AppBanner from "../components/shared/AppBanner";
 
 
