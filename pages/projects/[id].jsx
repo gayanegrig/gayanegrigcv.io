@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { FiTag } from 'react-icons/fi';
-import PagesMetaHead from '../../components/PagesMetaHead';
-import { projectsData } from '../../pages/api/data';
+import { projectsData } from '../api/data';
 import RelatedProjects from '../../components/projects/RelatedProjects';
 
 function ProjectSingle(props)
@@ -19,7 +18,6 @@ function ProjectSingle(props)
 
   return (
     <div className="container mx-auto">
-      <PagesMetaHead title={props.project?.title} />
       <div>
         <p className="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7">
           {props.project.ProjectHeader?.title}

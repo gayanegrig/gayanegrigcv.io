@@ -215,7 +215,42 @@ a {
   font-family: "GeneralSans-BoldItalic";
 }
 
-/* Scroll to top style */
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  /* width: max-content; */
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .marquee-item {
+    margin-right: 1.5rem;
+  }
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .scrollToTop {
   @apply bg-indigo-600;
   @apply text-white;

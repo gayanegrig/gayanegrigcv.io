@@ -1,9 +1,8 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
-import Button from '../reusable/Button';
+import { useTranslation } from 'react-i18next';
 import FormInput from '../reusable/FormInput';
-import { useTranslation } from "react-i18next";
 
 function ContactForm()
 {
@@ -16,6 +15,12 @@ function ContactForm()
 		message: '',
 	});
 
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [status, setStatus] = useState({
+		type: '',
+		message: '',
+	});
+
 	const handleChange = (e) =>
 	{
 		const { name, value } = e.target;
@@ -25,46 +30,76 @@ function ContactForm()
 	async function handleSubmit(event)
 	{
 		event.preventDefault();
+		setStatus({ type: '', message: '' });
 
-		const data = {
-			name: event.target.name.value,
-			email: event.target.email.value,
-			message: event.target.message.value,
-			subject: event.target.subject.value,
-		};
-
-		const url = "/api/contact_api/route";
-		const response = await fetch(url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		});
-		console.log('response', response);
-		if (response.ok)
+		try
 		{
-			alert("Message sent successfully");
-			//reset the form
-			event.target.name.value = "";
-			event.target.email.value = "";
-			event.target.message.value = "";
-			event.target.subject.value = "";
+			setIsSubmitting(true);
 
-		} else
+			const data = {
+				name: formData.name,
+				email: formData.email,
+				message: formData.message,
+				subject: formData.subject,
+			};
+
+			const response = await fetch('/api/contact_api/route', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			});
+
+			if (response.ok)
+			{
+				setStatus({
+					type: 'success',
+					message: 'Message sent successfully!',
+				});
+
+				setFormData({
+					name: '',
+					email: '',
+					subject: '',
+					message: '',
+				});
+			} else
+			{
+				setStatus({
+					type: 'error',
+					message: 'Error sending message.',
+				});
+			}
+		} catch (error)
 		{
-			alert("Error sending message");
+			console.error(error);
+			setStatus({
+				type: 'error',
+				message: 'Something went wrong. Please try again.',
+			});
+		} finally
+		{
+			setIsSubmitting(false);
 		}
 	}
-	return (
-		<div className="w-full lg:w-1/2">
-			<div className="leading-loose">
-				<form
-					onSubmit={handleSubmit} className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
-				>
-					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
-						{t('contactDetails.contactForm')}					</p>
 
+	return (
+		<div className="h-full rounded-3xl border border-ternary-light dark:border-slate-700/70 bg-white dark:bg-slate-800/60 backdrop-blur-md shadow-sm p-6 sm:p-8 lg:p-10">
+			<form onSubmit={handleSubmit} className="space-y-6">
+				<div>
+					<p className="text-sm uppercase tracking-[0.2em] text-emerald-500 font-semibold">
+						Send message
+					</p>
+
+
+
+					<p className="mt-4 text-base leading-7 text-ternary-dark dark:text-slate-300">
+						Fill out the form below and I’ll reply as soon as possible.
+					</p>
+				</div>
+
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 					<FormInput
 						inputLabel={t('contactDetails.formLabels.fullName')}
 						labelFor="name"
@@ -76,6 +111,7 @@ function ContactForm()
 						onChange={handleChange}
 						value={formData.name}
 					/>
+
 					<FormInput
 						inputLabel={t('contactDetails.formLabels.email')}
 						labelFor="email"
@@ -87,48 +123,62 @@ function ContactForm()
 						onChange={handleChange}
 						value={formData.email}
 					/>
-					<FormInput
-						inputLabel={t('contactDetails.formLabels.subject')}
-						labelFor="subject"
-						inputType="text"
-						inputId="subject"
-						inputName="subject"
-						placeholderText={t('contactDetails.formLabels.subject')}
-						ariaLabelName="Subject"
+				</div>
+
+				<FormInput
+					inputLabel={t('contactDetails.formLabels.subject')}
+					labelFor="subject"
+					inputType="text"
+					inputId="subject"
+					inputName="subject"
+					placeholderText={t('contactDetails.formLabels.subject')}
+					ariaLabelName="Subject"
+					onChange={handleChange}
+					value={formData.subject}
+				/>
+
+				<div>
+					<label
+						className="block text-lg font-medium text-primary-dark dark:text-slate-100 mb-2"
+						htmlFor="message"
+					>
+						{t('contactDetails.formLabels.message')}
+					</label>
+
+					<textarea
+						className="w-full px-5 py-3 border border-ternary-light dark:border-slate-700/70 text-primary-dark dark:text-slate-100 bg-white dark:bg-slate-800/70 rounded-2xl shadow-sm text-md outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-none"
+						id="message"
+						name="message"
+						rows={6}
+						aria-label="Message"
 						onChange={handleChange}
-						value={formData.subject}
+						value={formData.message}
+						placeholder={t('contactDetails.formLabels.message')}
 					/>
+				</div>
 
-					<div className="mt-6">
-						<label
-							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
-							htmlFor="message"
-						>
-							{t('contactDetails.formLabels.message')}
-						</label>
-						<textarea
-							className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
-							id="message"
-							name="message"
-							cols="14"
-							rows="6"
-							aria-label="Message"
-							onChange={handleChange}
-							value={formData.message}
-						></textarea>
+				{status.message && (
+					<div
+						className={`rounded-2xl px-4 py-3 text-sm font-medium ${status.type === 'success'
+							? 'bg-green-100 text-green-700 dark:bg-green-500/10 dark:text-green-400'
+							: 'bg-red-100 text-red-700 dark:bg-red-500/10 dark:text-red-400'
+							}`}
+					>
+						{status.message}
 					</div>
+				)}
 
-					<div className="mt-6">
-						<span className="font-general-medium  px-7 py-4 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
-							<Button
-								title={t('contactDetails.formLabels.sendMessage')}
-								type="submit"
-								aria-label="Send Message"
-							/>
-						</span>
-					</div>
-				</form>
-			</div>
+				<div>
+					<button
+						type="submit"
+						disabled={isSubmitting}
+						aria-label="Send Message"
+						className="inline-flex items-center justify-center rounded-2xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-70 disabled:cursor-not-allowed text-white px-6 py-3 font-semibold shadow-lg transition-all duration-300"
+					>
+						{isSubmitting ? 'Sending...' : t('contactDetails.formLabels.sendMessage')}
+					</button>
+				</div>
+			</form>
 		</div>
 	);
 }

@@ -1,30 +1,29 @@
 import { motion } from 'framer-motion';
-import AboutClients from '../components/about/AboutClients';
-import AboutCounter from '../components/about/AboutCounter';
-import AboutMeBio from '../components/about/AboutMeBio';
-import PagesMetaHead from '../components/PagesMetaHead';
-import TechnologiesTools from '../components/about/AboutMyTech';
+import AboutClients from './AboutClients';
+import AboutCounter from './AboutCounter';
+import AboutMeBio from './AboutMeBio';
+import TechnologiesTools from './AboutMyTech';
 
-function about()
+function About()
 {
 	return (
-		<div>
-			<PagesMetaHead title="About Me" />
+		<div >
 
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
-				className="container mx-auto"
+				className="mx-auto"
 			>
 				<AboutMeBio />
 			</motion.div>
 			<TechnologiesTools />
-			{/** Counter without paddings */}
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
+				className="mx-auto"
+
 			>
 				<AboutCounter />
 			</motion.div>
@@ -33,7 +32,7 @@ function about()
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
-				className="container mx-auto"
+				className="mx-auto"
 			>
 				<AboutClients />
 			</motion.div>
@@ -41,4 +40,4 @@ function about()
 	);
 }
 
-export default about;
+export default About;

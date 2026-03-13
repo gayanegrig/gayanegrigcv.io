@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 export default async function POST(req, res) {
   const username = "nin.dash@mail.ru";
-  const password = "41UGEeBgzwrtYWPKuwzA";
+  const password = "ioxaxaOBKW612NudgEfV";
   const myEmail = "gayane.grigoryan.93.gg@gmail.com";
 
   if (req.method !== "POST") {

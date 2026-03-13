@@ -18,6 +18,10 @@ import {
   Eldorado4,
   mobileProject0,
   uiProject0,
+  SplitflowImage2,
+  SplitflowImage3,
+  SplitflowImage4,
+  SplitflowImage5,
 } from "../../public/images/assets.images";
 
 export const projectsData = [
@@ -69,11 +73,13 @@ export const projectsData = [
         {
           id: uuidv4(),
           title: "Project Links",
-          details: "https://apps.apple.com/am/app/eldorado-armenia/id6714467772",
+          details:
+            "https://apps.apple.com/am/app/eldorado-armenia/id6714467772",
         },
       ],
       ObjectivesHeading: "Objective",
-      ObjectivesDetails:"The primary goal of the Eldorado mobile app was to create a smooth, engaging, and user-friendly shopping experience for users on mobile devices. The objective was to ensure effortless navigation and quick access to products, integrating advanced mobile-specific features such as push notifications and easy checkout processes. Additionally, the app was designed to support Eldorado's business objectives by enhancing customer engagement, streamlining the purchasing process, and offering a platform capable of growing with the company's future expansion and evolving customer needs.",
+      ObjectivesDetails:
+        "The primary goal of the Eldorado mobile app was to create a smooth, engaging, and user-friendly shopping experience for users on mobile devices. The objective was to ensure effortless navigation and quick access to products, integrating advanced mobile-specific features such as push notifications and easy checkout processes. Additionally, the app was designed to support Eldorado's business objectives by enhancing customer engagement, streamlining the purchasing process, and offering a platform capable of growing with the company's future expansion and evolving customer needs.",
       Technologies: [
         {
           title: "Tools & Technologies",
@@ -94,23 +100,23 @@ export const projectsData = [
       ProjectDetails: [
         {
           id: uuidv4(),
-          details: 
-            "One of the key challenges was ensuring that the mobile app maintained optimal performance across different device types and screen sizes, while offering a seamless experience for users. This required extensive testing to ensure responsive design and smooth interactions on both Android and iOS platforms."
+          details:
+            "One of the key challenges was ensuring that the mobile app maintained optimal performance across different device types and screen sizes, while offering a seamless experience for users. This required extensive testing to ensure responsive design and smooth interactions on both Android and iOS platforms.",
         },
         {
           id: uuidv4(),
-          details: 
-            "Another challenge was to integrate and manage real-time data, especially for inventory management and product availability. Ensuring seamless synchronization between the app's backend and the mobile interface was critical to delivering a smooth user experience with minimal latency."
+          details:
+            "Another challenge was to integrate and manage real-time data, especially for inventory management and product availability. Ensuring seamless synchronization between the app's backend and the mobile interface was critical to delivering a smooth user experience with minimal latency.",
         },
         {
           id: uuidv4(),
-          details: 
-            "The integration of push notifications presented its own set of challenges, as we needed to personalize notifications without overwhelming the user. This was crucial to keeping users engaged without disrupting their app experience."
+          details:
+            "The integration of push notifications presented its own set of challenges, as we needed to personalize notifications without overwhelming the user. This was crucial to keeping users engaged without disrupting their app experience.",
         },
         {
           id: uuidv4(),
-          details: 
-            "Additionally, optimizing the checkout process for mobile was essential. We focused on simplifying the user flow, integrating secure payment gateways, and minimizing the steps to complete a purchase, ensuring a frictionless transaction experience on mobile."
+          details:
+            "Additionally, optimizing the checkout process for mobile was essential. We focused on simplifying the user flow, integrating secure payment gateways, and minimizing the steps to complete a purchase, ensuring a frictionless transaction experience on mobile.",
         },
       ],
     },
@@ -126,21 +132,21 @@ export const projectsData = [
       tags: ["Frontend Development"],
     },
     ProjectImages: [
-
       {
         id: uuidv4(),
         title: "Geoquake App Interface",
         img: Geoquake1,
-      },   {
+      },
+      {
         id: uuidv4(),
         title: "Geoquake App Interface",
         img: Geoquake2,
-      },   {
+      },
+      {
         id: uuidv4(),
         title: "Geoquake App Interface",
         img: Geoquake3,
       },
-      
     ],
     ProjectInfo: {
       ClientHeading: "About Client",
@@ -243,7 +249,6 @@ export const projectsData = [
         title: "Car Number Scanner Interface",
         img: mobileProject0,
       },
-      
     ],
     ProjectInfo: {
       ClientHeading: "About Client",
@@ -302,6 +307,88 @@ export const projectsData = [
       ],
     },
   },
+{
+  id: 10,
+  title: "SplitFlow - Expense Sharing",
+  url: "splitflow-expense-sharing",
+  category: "Mobile Application",
+  img: SplitflowImage3,
+  ProjectHeader: {
+    title: "SplitFlow - Expense Sharing",
+    tags: ["Maintenance", "Bug Fixing", "Code Refactoring"],
+  },
+  ProjectImages: [
+    {
+      id: uuidv4(),
+      title: "SplitFlow - Expense Sharing",
+      img: SplitflowImage2,
+    },
+    {
+      id: uuidv4(),
+      title: "SplitFlow - Expense Sharing",
+      img: SplitflowImage4,
+    },
+    {
+      id: uuidv4(),
+      title: "SplitFlow - Expense Sharing",
+      img: SplitflowImage5,
+    },
+  ],
+  ProjectInfo: {
+    ClientHeading: "About Client",
+    CompanyInfo: [
+      {
+        id: uuidv4(),
+        title: "Company",
+        details: "Pileupp Solutions LLC",
+      },
+      {
+        id: uuidv4(),
+        title: "Services Provided",
+        details: "Bug Fixing & Code Refactoring",
+      },
+    ],
+
+    ObjectivesHeading: "Project Objective",
+    ObjectivesDetails:
+      "The goal of this work was to improve the stability and maintainability of the SplitFlow mobile application by fixing existing issues and refactoring parts of the codebase. The focus was on improving performance, resolving bugs, and enhancing code quality for better long-term maintainability.",
+
+    Technologies: [
+      {
+        title: "Tools & Technologies",
+        techs: [
+          "Expo",
+          "React Native",
+          "JavaScript",
+          "TypeScript",
+          "Redux Toolkit",
+          "React Navigation",
+          "REST APIs",
+          "AsyncStorage",
+        ],
+      },
+    ],
+
+    ProjectDetailsHeading: "Project Challenges",
+    ProjectDetails: [
+      {
+        id: uuidv4(),
+        details:
+          "Investigating and resolving existing bugs to improve application stability.",
+      },
+      {
+        id: uuidv4(),
+        details:
+          "Refactoring parts of the codebase to improve readability, maintainability, and overall project structure.",
+      },
+      {
+        id: uuidv4(),
+        details:
+          "Ensuring that bug fixes and improvements did not break existing functionality.",
+      },
+    ],
+  },
+},
   {
     id: 1,
     title: "Greenwaveiot",
@@ -784,7 +871,6 @@ export const projectsData = [
         title: "Redro Application Interface",
         img: uiProject2,
       },
-      
     ],
     ProjectInfo: {
       ClientHeading: "About Client",
@@ -807,7 +893,8 @@ export const projectsData = [
         {
           id: uuidv4(),
           title: "Project Links",
-          details: "https://play.google.com/store/apps/details?id=com.redro.app",
+          details:
+            "https://play.google.com/store/apps/details?id=com.redro.app",
         },
       ],
       ObjectivesHeading: "Project Objective",
@@ -850,10 +937,8 @@ export const projectsData = [
       ],
     },
   },
-
 ];
 
 export default function handler(req, res) {
   res.status(200).json(projectsData);
 }
-

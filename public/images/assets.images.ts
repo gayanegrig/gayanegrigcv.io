@@ -17,3 +17,7 @@ export { default as Geoquake1 } from "../../public/images/geoquake-1.png";
 export { default as Geoquake2 } from "../../public/images/geoquake-2.png";
 export { default as Geoquake3 } from "../../public/images/geoquake-3.png";
 export { default as logoDark } from "../../public/images/logo-dark.png";
+export { default as SplitflowImage2 } from "../../public/images/2.png";
+export { default as SplitflowImage3 } from "../../public/images/3.png";
+export { default as SplitflowImage4 } from "../../public/images/4.png";
+export { default as SplitflowImage5 } from "../../public/images/5.png";

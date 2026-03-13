@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiArrowDownCircle } from "react-icons/fi";
+import { FiDownload, FiAward } from "react-icons/fi";
 import Image from "next/image";
 import { Developer } from "../../public/images/assets.images";
 import { useTranslation } from "react-i18next";
@@ -14,8 +14,8 @@ function AppBanner()
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-      className="flex flex-col sm:justify-between items-center sm:flex-row mt-5 md:mt-2">
-      <div className="w-full md:w-1/3 text-left">
+      className="flex flex-col w-full md:w-full mt-2 sm:justify-between items-center sm:flex-row mt-5 ">
+      <div className="w-full md::w-full text-left">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -71,16 +71,27 @@ function AppBanner()
             duration: 0.9,
             delay: 0.3,
           }}
-          className="flex justify-center sm:block">
+          className="flex flex-col sm:flex-row gap-2 mt-10"
+        >
           <a
             download="CV_Gayane_Grigoryan_Frontend_React_React_Native.pdf"
             href="/files/CV_Gayane_Grigoryan_Frontend_React_React_Native.pdf"
-            className="font-general-medium flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
-            aria-label="Download Resume">
-            <FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
-            <span className="text-sm sm:text-lg duration-100">{t("AppBanner.download_cv")}</span>
+            className="flex items-center justify-center gap-2 px-2 py-2 text-sm md:text-base font-medium rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 transition-all duration-300"
+          >
+            <FiDownload className="w-4 h-4" />
+            {t("AppBanner.download_cv")}
+          </a>
+
+          <a
+            download="Gayane_React_JS_certificate.pdf"
+            href="/files/Gayane_React_JS_certificate.pdf"
+            className="flex items-center justify-center gap-2 px-7 py-2 text-sm md:text-base font-medium rounded-lg border border-indigo-500 text-indigo-600 dark:text-indigo-300 hover:bg-indigo-600 hover:text-white transition-all duration-300"
+          >
+            <FiAward className="w-4 h-4" />
+            {t("AppBanner.Download_Certificate")}
           </a>
         </motion.div>
+
       </div>
       <motion.div
         initial={{ opacity: 0, y: -180 }}
