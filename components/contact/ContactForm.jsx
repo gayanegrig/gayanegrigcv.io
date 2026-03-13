@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import FormInput from '../reusable/FormInput';
 
 function ContactForm()
 {
@@ -24,10 +23,13 @@ function ContactForm()
 	const handleChange = (e) =>
 	{
 		const { name, value } = e.target;
-		setFormData((prev) => ({ ...prev, [name]: value }));
+		setFormData((prev) => ({
+			...prev,
+			[name]: value,
+		}));
 	};
 
-	async function handleSubmit(event)
+	const handleSubmit = async (event) =>
 	{
 		event.preventDefault();
 		setStatus({ type: '', message: '' });
@@ -36,20 +38,16 @@ function ContactForm()
 		{
 			setIsSubmitting(true);
 
-			const data = {
-				name: formData.name,
-				email: formData.email,
-				message: formData.message,
-				subject: formData.subject,
-			};
-
 			const response = await fetch('/api/contact_api/route', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
+					Accept: 'application/json',
 				},
-				body: JSON.stringify(data),
+				body: JSON.stringify(formData),
 			});
+
+			const result = await response.json().catch(() => null);
 
 			if (response.ok)
 			{
@@ -68,12 +66,12 @@ function ContactForm()
 			{
 				setStatus({
 					type: 'error',
-					message: 'Error sending message.',
+					message: result?.message || 'Error sending message.',
 				});
 			}
 		} catch (error)
 		{
-			console.error(error);
+			console.error('Submit error:', error);
 			setStatus({
 				type: 'error',
 				message: 'Something went wrong. Please try again.',
@@ -82,7 +80,7 @@ function ContactForm()
 		{
 			setIsSubmitting(false);
 		}
-	}
+	};
 
 	return (
 		<div className="h-full rounded-3xl border border-ternary-light dark:border-slate-700/70 bg-white dark:bg-slate-800/60 backdrop-blur-md shadow-sm p-6 sm:p-8 lg:p-10">
@@ -92,50 +90,72 @@ function ContactForm()
 						Send message
 					</p>
 
-
-
 					<p className="mt-4 text-base leading-7 text-ternary-dark dark:text-slate-300">
 						Fill out the form below and I’ll reply as soon as possible.
 					</p>
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-					<FormInput
-						inputLabel={t('contactDetails.formLabels.fullName')}
-						labelFor="name"
-						inputType="text"
-						inputId="name"
-						inputName="name"
-						placeholderText={t('contactDetails.formLabels.fullName')}
-						ariaLabelName="Name"
-						onChange={handleChange}
-						value={formData.name}
-					/>
+					<div>
+						<label
+							className="block text-lg font-medium text-primary-dark dark:text-slate-100 mb-2"
+							htmlFor="name"
+						>
+							{t('contactDetails.formLabels.fullName')}
+						</label>
+						<input
+							className="w-full px-5 py-3 border border-ternary-light dark:border-slate-700/70 text-primary-dark dark:text-slate-100 bg-white dark:bg-slate-800/70 rounded-2xl shadow-sm text-md outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+							id="name"
+							name="name"
+							type="text"
+							required
+							placeholder={t('contactDetails.formLabels.fullName')}
+							aria-label="Name"
+							onChange={handleChange}
+							value={formData.name}
+						/>
+					</div>
 
-					<FormInput
-						inputLabel={t('contactDetails.formLabels.email')}
-						labelFor="email"
-						inputType="email"
-						inputId="email"
-						inputName="email"
-						placeholderText={t('contactDetails.formLabels.email')}
-						ariaLabelName="Email"
-						onChange={handleChange}
-						value={formData.email}
-					/>
+					<div>
+						<label
+							className="block text-lg font-medium text-primary-dark dark:text-slate-100 mb-2"
+							htmlFor="email"
+						>
+							{t('contactDetails.formLabels.email')}
+						</label>
+						<input
+							className="w-full px-5 py-3 border border-ternary-light dark:border-slate-700/70 text-primary-dark dark:text-slate-100 bg-white dark:bg-slate-800/70 rounded-2xl shadow-sm text-md outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+							id="email"
+							name="email"
+							type="email"
+							required
+							placeholder={t('contactDetails.formLabels.email')}
+							aria-label="Email"
+							onChange={handleChange}
+							value={formData.email}
+						/>
+					</div>
 				</div>
 
-				<FormInput
-					inputLabel={t('contactDetails.formLabels.subject')}
-					labelFor="subject"
-					inputType="text"
-					inputId="subject"
-					inputName="subject"
-					placeholderText={t('contactDetails.formLabels.subject')}
-					ariaLabelName="Subject"
-					onChange={handleChange}
-					value={formData.subject}
-				/>
+				<div>
+					<label
+						className="block text-lg font-medium text-primary-dark dark:text-slate-100 mb-2"
+						htmlFor="subject"
+					>
+						{t('contactDetails.formLabels.subject')}
+					</label>
+					<input
+						className="w-full px-5 py-3 border border-ternary-light dark:border-slate-700/70 text-primary-dark dark:text-slate-100 bg-white dark:bg-slate-800/70 rounded-2xl shadow-sm text-md outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+						id="subject"
+						name="subject"
+						type="text"
+						required
+						placeholder={t('contactDetails.formLabels.subject')}
+						aria-label="Subject"
+						onChange={handleChange}
+						value={formData.subject}
+					/>
+				</div>
 
 				<div>
 					<label
@@ -150,6 +170,7 @@ function ContactForm()
 						id="message"
 						name="message"
 						rows={6}
+						required
 						aria-label="Message"
 						onChange={handleChange}
 						value={formData.message}
