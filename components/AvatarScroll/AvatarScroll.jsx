@@ -36,8 +36,6 @@ export default function AvatarScroll()
 
     return (
         <div className="fixed right-6 top-10 z-50 flex flex-col items-end">
-
-            {/* Speech bubble */}
             {showBubble && (
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
