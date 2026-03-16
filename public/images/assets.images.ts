@@ -21,3 +21,4 @@ export { default as SplitflowImage2 } from "../../public/images/2.png";
 export { default as SplitflowImage3 } from "../../public/images/3.png";
 export { default as SplitflowImage4 } from "../../public/images/4.png";
 export { default as SplitflowImage5 } from "../../public/images/5.png";
+export { default as LogoDarkScroll } from "../../public/images/logo-dark-scroll.png";
